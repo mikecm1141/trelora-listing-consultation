@@ -25,10 +25,15 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
-  gem 'vcr'
-  gem 'webmock'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'simplecov'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
