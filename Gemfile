@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'awesome_print'
 end
 
 group :test do
