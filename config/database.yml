@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: trelora_listing_consultation_production
-  username: trelora_listing_consultation
+  username: admin
   password: <%= ENV['TRELORA_LISTING_CONSULTATION_DATABASE_PASSWORD'] %>
