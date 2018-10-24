@@ -13,10 +13,15 @@
  */
 
 $vivid-spring-bud: #88d000;
-$trout: #494f5d;
 $wild-sand: #f4f4f4;
-$alabaster: #f8f8f8;
 $mine-shaft: #333333;
+$trout: #494f5d;
+$alabaster: #f8f8f8;
+$limeade: #72a609;
+$atlantis: #97c93d;
+$sushi: #7ba52e;
+$wasabi: #659308;
+$avocado: #618e08;
 
 $font-family-sans-serif: 'Oxygen', Helvetica, Arial, sans-serif;
 $body-color: $mine-shaft;
@@ -25,23 +30,6 @@ $body-color: $mine-shaft;
 @import "login.scss";
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 
-.nav-link {
-  color: $wild-sand;
-  background-color: $trout;
-}
-
-.nav-link:hover {
-  background-color: $vivid-spring-bud;
-  text-decoration: none;
-  color: $mine-shaft;
-}
-
-.center-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .btn-trelora {
   box-shadow: 0 1px 4px 0 rgba(27,27,27,0.2);
   border-radius: 2px;
@@ -49,7 +37,7 @@ $body-color: $mine-shaft;
   padding: 8px 24px;
 
   align-items: center;
-  background-color: #72a609;
+  background-color: $limeade;
   border: none;
   /*border-radius: 2px;*/
   color: white;
@@ -63,19 +51,36 @@ $body-color: $mine-shaft;
   position: relative;
   text-transform: uppercase;
   transition: 0.1s;
-  background-image: linear-gradient(-129deg, #97c93d 0%, #7ba52e 100%);
+  background-image: linear-gradient(-129deg, $atlantis 0%, $sushi 100%);
 }
 
 .btn-trelora:hover {
   box-shadow: 1px 2px 7px 0 rgba(27,27,27,0.3);
-  background-image: linear-gradient(-129deg, #72a609 0%, #659308 100%);
-  background-color: #618e08;
+  background-image: linear-gradient(-129deg, $limeade 0%, $wasabi 100%);
+  background-color: $avocado;
   border: none;
   cursor: pointer;
 }
 
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  color: $wild-sand;
+  background-color: $trout;
+}
+
+.nav-link:hover {
+  background-color: $limeade;
+  text-decoration: none;
+  color: $mine-shaft;
+}
+
 #active {
-  background-color: $vivid-spring-bud;
+  background-color: $limeade;
   text-decoration: none;
   color: $mine-shaft;
 }
