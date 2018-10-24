@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+$vivid-spring-bud: #88d000;
+$wild-sand: #f4f4f4;
+$mine-shaft: #333333;
+$trout: #494f5d;
+$alabaster: #f8f8f8;
+$limeade: #72a609;
+$atlantis: #97c93d;
+$sushi: #7ba52e;
+$wasabi: #659308;
+$avocado: #618e08;
+
+$font-family-sans-serif: 'Oxygen', Helvetica, Arial, sans-serif;
+$body-color: $mine-shaft;
+
+@import "bootstrap";
+@import "login.scss";
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+
+.btn-trelora {
+  align-items: center;
+  background-color: $limeade;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.8px;
+  outline: 0 solid transparent;
+  padding: 8px 24px;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.1s;
+  background-image: linear-gradient(-129deg, $atlantis 0%, $sushi 100%);
+}
+
+.btn-trelora:hover {
+  box-shadow: 1px 2px 7px 0 rgba(27,27,27,0.3);
+  background-image: linear-gradient(-129deg, $limeade 0%, $wasabi 100%);
+  background-color: $avocado;
+  border: none;
+  cursor: pointer;
+}
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  background-color: $trout;
+  color: $wild-sand;
+}
+
+.nav-link:hover {
+  background-color: $limeade;
+  color: $mine-shaft;
+  text-decoration: none;
+}
+
+#active {
+  background-color: $limeade;
+  color: $mine-shaft;
+  text-decoration: none;
+}
