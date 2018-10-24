@@ -11,12 +11,13 @@ class SessionsController < ApplicationController
         session[:token] = result["data"]["user"]["HTTP_AUTH_TOKEN"]
         
         addresses_hash = result["data"]["available_address"]["addresses"]
-
-        @addresses = addresses_hash.map do |key, value|
+        
+        addresses = addresses_hash.map do |key, value|
             value["id"]
         end
+
+        session[:addresses] = addresses
         
-        binding.pry 
-        redirect_to find_path(@addresses)
+        redirect_to find_path
     end
 end
