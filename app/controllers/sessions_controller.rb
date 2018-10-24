@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
         response = conn.get("/api/v0/turing/members?email=#{email}&password=#{password}")
 
         result = JSON.parse(response.body)
+
+        session[:token] = result["data"]["user"]["HTTP_AUTH_TOKEN"]
         
         addresses_hash = result["data"]["available_address"]["addresses"]
 
@@ -14,6 +16,7 @@ class SessionsController < ApplicationController
             value["id"]
         end
         
+        binding.pry 
         redirect_to find_path(@addresses)
     end
 end
