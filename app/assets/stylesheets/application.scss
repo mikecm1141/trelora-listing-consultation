@@ -12,17 +12,29 @@
  *
  */
 
-$font-family-sans-serif: 'Oxygen', Helvetica, Arial, sans-serif;
-
-@import "bootstrap";
-@import "login.scss";
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
-
 $vivid-spring-bud: #88d000;
 $trout: #494f5d;
 $wild-sand: #f4f4f4;
 $alabaster: #f8f8f8;
 $mine-shaft: #333333;
+
+$font-family-sans-serif: 'Oxygen', Helvetica, Arial, sans-serif;
+$body-color: $mine-shaft;
+
+@import "bootstrap";
+@import "login.scss";
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+
+.nav-link {
+  color: $wild-sand;
+  background-color: $trout;
+}
+
+.nav-link:hover {
+  background-color: $vivid-spring-bud;
+  text-decoration: none;
+  color: $mine-shaft;
+}
 
 .center-wrapper {
   display: flex;
@@ -60,4 +72,10 @@ $mine-shaft: #333333;
   background-color: #618e08;
   border: none;
   cursor: pointer;
+}
+
+#active {
+  background-color: $vivid-spring-bud;
+  text-decoration: none;
+  color: $mine-shaft;
 }
