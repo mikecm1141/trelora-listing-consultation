@@ -1,0 +1,54 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1540413210
+  }
+}
