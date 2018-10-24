@@ -22,9 +22,10 @@
         1,
         1,
         null,
-        1,
-        1,
         null,
+        null,
+        null,
+        1,
         1,
         null,
         1,
@@ -37,6 +38,24 @@
         null,
         1,
         null,
+        1,
+        null,
+        null
+      ],
+      "/Users/jling/turing/3module/projects/trelora/trelora-listing-consultation/app/services/trelora_service.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
         1,
         null,
         null
@@ -80,6 +99,6 @@
         0
       ]
     },
-    "timestamp": 1540418996
+    "timestamp": 1540420413
   }
 }
