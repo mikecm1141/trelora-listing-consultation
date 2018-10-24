@@ -11,7 +11,8 @@ describe 'As a visitor' do
 
             expect(current_path).to eq("/find")
             expect(page).to have_content("Pricing Location Address")
-            expect(page).to have_content("")
+            expect(page).to have_content("1860_south_marion_street-Denver-CO-80210")
+            expect(page).to have_content("910-portland_place-Boulder-CO-80304")
         end
     end
 end
