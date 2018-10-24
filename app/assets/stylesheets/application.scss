@@ -15,6 +15,7 @@
 $font-family-sans-serif: 'Oxygen', Helvetica, Arial, sans-serif;
 
 @import "bootstrap";
+@import "login.scss";
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 
 $vivid-spring-bud: #88d000;
@@ -22,3 +23,41 @@ $trout: #494f5d;
 $wild-sand: #f4f4f4;
 $alabaster: #f8f8f8;
 $mine-shaft: #333333;
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-trelora {
+  box-shadow: 0 1px 4px 0 rgba(27,27,27,0.2);
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 8px 24px;
+
+  align-items: center;
+  background-color: #72a609;
+  border: none;
+  /*border-radius: 2px;*/
+  color: white;
+  display: inline-flex;
+  /*font-family: "Oxygen", Helvetica, Arial, sans-serif;*/
+  /*font-size: 16px;*/
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.8px;
+  outline: 0px solid transparent;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.1s;
+  background-image: linear-gradient(-129deg, #97c93d 0%, #7ba52e 100%);
+}
+
+.btn-trelora:hover {
+  box-shadow: 1px 2px 7px 0 rgba(27,27,27,0.3);
+  background-image: linear-gradient(-129deg, #72a609 0%, #659308 100%);
+  background-color: #618e08;
+  border: none;
+  cursor: pointer;
+}
