@@ -11,6 +11,7 @@ describe 'As a visitor' do
 
             expect(current_path).to eq("/find")
             expect(page).to have_content("Pricing Location Address")
+            expect(page).to have_content("")
         end
     end
 end
