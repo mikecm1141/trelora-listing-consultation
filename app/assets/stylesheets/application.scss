@@ -19,7 +19,7 @@ $trout: #494f5d;
 $alabaster: #f8f8f8;
 $limeade: #72a609;
 $atlantis: #97c93d;
-$sushi: #7ba52e;
+$sushi: #7ba52e;l
 $wasabi: #659308;
 $avocado: #618e08;
 
@@ -31,23 +31,18 @@ $body-color: $mine-shaft;
 @import url(https://fonts.googleapis.com/css?family=Oxygen);
 
 .btn-trelora {
-  box-shadow: 0 1px 4px 0 rgba(27,27,27,0.2);
-  border-radius: 2px;
-  font-size: 16px;
-  padding: 8px 24px;
-
   align-items: center;
   background-color: $limeade;
   border: none;
-  /*border-radius: 2px;*/
+  border-radius: 2px;
   color: white;
   display: inline-flex;
-  /*font-family: "Oxygen", Helvetica, Arial, sans-serif;*/
-  /*font-size: 16px;*/
+  font-size: 16px;
   font-weight: 600;
   justify-content: center;
   letter-spacing: 0.8px;
   outline: 0px solid transparent;
+  padding: 8px 24px;
   position: relative;
   text-transform: uppercase;
   transition: 0.1s;
@@ -69,18 +64,18 @@ $body-color: $mine-shaft;
 }
 
 .nav-link {
-  color: $wild-sand;
   background-color: $trout;
+  color: $wild-sand;
 }
 
 .nav-link:hover {
   background-color: $limeade;
-  text-decoration: none;
   color: $mine-shaft;
+  text-decoration: none;
 }
 
 #active {
   background-color: $limeade;
-  text-decoration: none;
   color: $mine-shaft;
+  text-decoration: none;
 }
