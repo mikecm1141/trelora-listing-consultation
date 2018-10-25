@@ -1,20 +1,20 @@
 <h2 class="text-center mt-6 mb-4 font-weight-bold">TRELORA</h2>
 <h3 class="text-center font-weight-bold">Listing Consultation Tool</h3>
 
-<form>
-  <div class="container mt-5">
+<div class="container mt-5">
+  <%= form_tag("/login", method: :post) do %>
     <div class="form-group">
-      <label for="member-email" class="center-wrapper h5">Member Email</label>
-      <p class="text-danger text-center h6 small"><em>* Member Email Not Found</em></p>
-      <input type="email" class="form-control mt-3" id="member-email" aria-describedby="emailHelp">
+      <%= label_tag :email, 'Member Email', class: 'center-wrapper h5' %>
+      <%= text_field_tag :email, class: 'form-control mt-3' %>
     </div>
+
     <div class="form-group">
-      <label for="password" class="center-wrapper h5">Password</label>
-      <p class="text-danger text-center h6 small"><em>* Member Password Incorrect</em></p>
-      <input type="password" class="form-control mt-3" id="password">
+      <%= label_tag :password, 'Password', class: 'center-wrapper h5' %>
+      <%= password_field_tag :password, class: 'form-control mt-3' %>
     </div>
+
     <div class="mt-5 center-wrapper">
-      <button type="submit" class="btn-trelora">Submit</button>
+      <%= submit_tag 'Login', class: 'btn-trelora' %>
     </div>
-  </div>
-</form>
+  <% end %>
+</div>
