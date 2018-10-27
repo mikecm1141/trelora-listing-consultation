@@ -12,10 +12,10 @@ class UserInfoFacade
   end
 
   def get_token
-    get_user_info[:data][:user][:HTTP_AUTH_TOKEN]
+    user_info[:data][:user][:HTTP_AUTH_TOKEN]
   end
 
-  def get_user_info
+  def user_info
     info ||= trelora_service.get_user_info(@email, @password)
   end
 
