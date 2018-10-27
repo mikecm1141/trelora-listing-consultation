@@ -6,8 +6,8 @@ class UserInfoFacade
 
   def get_addresses
     addresses_hash = get_user_info[:data][:available_address][:addresses]
-    addresses = addresses_hash.map do |key, value|
-        value[:id]
+    addresses_hash.map do |_, value|
+      value[:id]
     end
   end
 
