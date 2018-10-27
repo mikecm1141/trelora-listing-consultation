@@ -1,4 +1,3 @@
 class UserProperty < ApplicationRecord
-  belongs_to :user 
-  belongs_to :property
+  has_one :property, foreign_key: "listing_id"
 end
