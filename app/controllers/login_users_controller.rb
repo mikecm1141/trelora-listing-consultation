@@ -6,7 +6,7 @@ class LoginUsersController < ApplicationController
   def create
     session[:addresses] = user_info.get_addresses
     session[:token] = user_info.get_token
-    redirect_to "/find-property"
+    redirect_to '/find-property'
   end
 
   private
