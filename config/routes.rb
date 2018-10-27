@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'welcome#index'
-  resources :login_users, only: [:index, :create]
-  # post '/find', to: "find#create"
-  # get '/find', to: "find#create"
+  root to: 'login_users#new'
+  get '/find-property', to: 'find#index'
+  resources :login_users, only: %w[index create new]
 end
