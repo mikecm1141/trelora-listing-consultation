@@ -1,15 +1,28 @@
 class LoginUsersController < ApplicationController
-  def create
-    email = params[:email]
-    password = params[:password]
+  before_action :user_info, :validate_user, on: :create
 
-    user_info = UserInfoFacade.new(email, password)
-    session[:addresses] = user_info.get_addresses
-    session[:token] = user_info.get_token
-    redirect_to login_users_path
+  def new
   end
 
-  def index
-    @addresses = session[:addresses]
+  def create
+    session[:addresses] = user_info.get_addresses
+    session[:token] = user_info.get_token
+    redirect_to "/find-property"
+  end
+
+  
+
+  private
+
+  def user_info
+    UserInfoFacade.new(user_params)
+  end
+
+  def validate_user
+    render :new, message: user_info.get_user_info[:data][:error] if user_info.get_user_info[:data][:status] == 422
+  end
+
+  def user_params
+    params.permit(:email, :password)
   end
 end

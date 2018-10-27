@@ -1,7 +1,7 @@
 class UserInfoFacade
-  def initialize(email, password)
-    @email = email
-    @password = password
+  def initialize(data)
+    @email = data[:email]
+    @password = data[:password]
   end
 
   def get_addresses
@@ -15,13 +15,14 @@ class UserInfoFacade
     get_user_info[:data][:user][:HTTP_AUTH_TOKEN]
   end
 
+  def get_user_info
+    info ||= trelora_service.get_user_info(@email, @password)
+  end
+
   private
 
   def trelora_service
     TreloraService.new
   end
 
-  def get_user_info
-    info ||= trelora_service.get_user_info(@email, @password)
-  end
 end
