@@ -1,7 +1,7 @@
 class LoginUsersController < ApplicationController
   before_action :user_info, :validate_user, on: :create
 
-  def new: end
+  def new; end
 
   def create
     session[:addresses] = user_info.get_addresses
