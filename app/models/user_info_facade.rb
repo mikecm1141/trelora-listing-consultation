@@ -16,7 +16,7 @@ class UserInfoFacade
   end
 
   def user_info
-    info ||= trelora_service.get_user_info(@email, @password)
+    || trelora_service.get_user_info(@email, @password)
   end
 
   private
