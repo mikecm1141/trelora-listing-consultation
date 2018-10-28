@@ -13,21 +13,22 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <div class="container">
-        <div class="row">
-          <a class="col text-center p-2 nav-link" id="<%= active('/find') %>" href="/find">
-            Find
-          </a>
-          <a class="col text-center p-2 nav-link" id="<%= active('/prepare') %>" href="#">
-            Prepare
-          </a>
-          <a class="col text-center p-2 nav-link" id="<%= active('/collect') %>" href="#">
-            Collect
-          </a>
-        </div>
-      </div>
-    <% end %>
-    <%= yield %>
+d 
+  <% if current_user %>
+   <div class="row">
+    <a class="col text-center p-2 nav-link" id="<%= active('/find-property') %>" href="/find-property">
+     Find
+    </a>
+    <a class="col text-center p-2 nav-link <%= disabled_class('/prepare') %>" id="<%= active('/prepare') %>" <%= link_to_path('/prepare') %>>
+     Prepare
+    </a>
+    <a class="col text-center p-2 nav-link <%= disabled_class('/prepare') %>" id="<%= active('/collect') %>" <%= link_to_path('/prepare') %>>
+     Collect
+    </a>
+   </div>
+  <% end %>
+  <div class="container">
+   <%= yield %>
+  </div>
   </body>
 </html>
