@@ -1,3 +1,10 @@
 class UserProperty < ApplicationRecord
-  has_one :property, foreign_key: "listing_id"
+	after_create :stringify_listing_id
+
+	private
+
+	def stringify_listing_id
+		self.address = self.listing_id.gsub(/([-_])/, ' ').downcase
+		self.save
+	end
 end
