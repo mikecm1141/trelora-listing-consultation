@@ -3,6 +3,12 @@
 
 <div class="container mt-5">
   <%= form_tag(login_users_path, method: :post) do %>
+    <div class="center-wrapper">
+      <% if flash[:alert] %>
+        <p class="text-danger"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+    
     <div class="form-group">
       <%= label_tag :email, 'Member Email', class: 'center-wrapper h5' %>
       <%= text_field_tag :email, nil, class: 'form-control mt-3' %>

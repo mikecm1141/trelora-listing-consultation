@@ -15,6 +15,10 @@ VCR.configure do |config|
   # config.filter_sensitive_data('<YOUR XXX API KEY HERE>') { ENV['xxx_api_key'] }
 end
 
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+end
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -29,6 +33,7 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 end
+
 
 DatabaseCleaner.strategy = :truncation
 RSpec.configure do |config|

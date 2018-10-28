@@ -31,6 +31,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'factory_bot_rails'
 end
 
 group :test do

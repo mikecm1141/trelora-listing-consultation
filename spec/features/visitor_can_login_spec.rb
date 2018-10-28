@@ -8,10 +8,9 @@ describe 'As a visitor' do
       fill_in :email, with: 'steven@trel.co'
       fill_in :password, with: 'password'
       click_on "Login"
+      
       expect(current_path).to eq('/find-property')
       expect(page).to have_content('Pricing Location Address')
-      expect(page).to have_content('1860_south_marion_street-Denver-CO-80210')
-      expect(page).to have_content('910-portland_place-Boulder-CO-80304')
     end
   end
 end
