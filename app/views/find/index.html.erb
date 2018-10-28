@@ -1,7 +1,7 @@
 <h1>Pricing Location Address</h1>
 
-<% @addresses.each do |address|%>
-<ul>
-    <li> <%= address %> </li>
-</ul>
+<%= form_tag('/find-proprety', method: :post) do %>
+	<%= text_field_tag :address %>
+
+	<%= submit_tag 'Find Location' %>
 <% end %>
