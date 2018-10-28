@@ -1,4 +1,5 @@
 class UserProperty < ApplicationRecord
+	belongs_to :user
 	after_create :stringify_listing_id
 
 	private

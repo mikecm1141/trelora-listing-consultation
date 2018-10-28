@@ -3,8 +3,6 @@ class FindController < ApplicationController
 
   def create
   	clean_address = params[:address].gsub(/[[:punct:]]/, '').downcase
-
-  	require 'pry'; binding.pry
   	find_property = UserProperty.find_by_address(clean_address)
 
   	if find_property.nil?

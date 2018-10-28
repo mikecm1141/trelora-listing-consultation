@@ -4,7 +4,7 @@ feature 'User searches for a property' do
 	context 'via /find-property' do
 		it 'allows them to search for a valid listing' do
 			allow_any_instance_of(ApplicationController).to receive(:current_user).and_return('this_is_a_very_simple_auth_token_string')
-			user = create(:user, http_auth_token: 'this_is_a_very_simple_auth_token_string')
+			user = create(:user)
 			user.user_properties.create(listing_id: '1860_south_marion_street-Denver-CO-80210')
 
 			visit '/find-property'

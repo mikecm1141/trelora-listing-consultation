@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get '/find-property', to: 'find#index'
   post '/find-proprety', to: 'find#create'
+
+  get '/prepare', to: 'prepare#show'
 end
