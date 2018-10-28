@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :login_users, only: %w[index create new]
 
   get '/find-property', to: 'find#index'
-  post '/find-proprety', to: 'find#create'
+  post '/find-property', to: 'find#create'
 
   get '/prepare', to: 'prepare#show'
 end
