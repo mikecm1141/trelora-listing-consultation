@@ -3,8 +3,8 @@ require 'rails_helper'
 feature 'User searches for a property' do
   context 'via /find-property' do
     it 'allows them to search for a valid listing' do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return('this_is_a_very_simple_auth_token_string')
       user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       user.user_properties.create(listing_id: '1860_south_marion_street-Denver-CO-80210')
 
       visit '/find-property'
@@ -21,7 +21,8 @@ feature 'User searches for a property' do
     end
 
   it 'returns error message if address is invalid' do
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return('this_is_a_very_simple_auth_token_string')
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit '/find-property'
 

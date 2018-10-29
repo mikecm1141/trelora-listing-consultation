@@ -14,6 +14,25 @@
 				<td>
 					<%= @property_facade.name %>
 				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Phone:
+				</th>
+				<td>
+					<%= link_to number_to_phone(@property_facade.phone, area_code: true), "tel:#{@property_facade.phone}" %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Retainer:
+				</th>
+				<td>
+					$500
+				</td>
+			</tr>
 		</tbody>
 	</table>
 </div>
