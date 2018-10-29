@@ -1,5 +1,5 @@
 class FindController < ApplicationController
-  before_action :clean_address, :find_property, :validate_address, only: :create
+  before_action :find_property, :validate_address, only: :create
 
   def index; end
 
@@ -15,7 +15,7 @@ class FindController < ApplicationController
   end
 
   def find_property
-    @find_property ||= UserProperty.find_by_address(clean_address)
+    @find_property ||= UserProperty.where(user_id: current_user.id, address: clean_address).first
   end
 
   def validate_address
