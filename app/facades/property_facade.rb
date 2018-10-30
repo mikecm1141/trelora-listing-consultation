@@ -1,113 +1,134 @@
 class PropertyFacade
-	def initialize(listing_id, auth_token)
-		@listing_id = listing_id
-		@auth_token = auth_token
-	end
+  def initialize(listing_id, auth_token)
+    @listing_id = listing_id
+    @auth_token = auth_token
+  end
 
-	def name
-		property_info[:client][:client_info][:name]
-	end
+  def name
+    property_info[:client][:client_info][:name]
+  end
 
-	def full_address
-		[street_address1, street_address2, city, state, zip].join(' ')
-	end
+  def full_address
+    [street_address1, street_address2, city, state, zip].join(' ')
+  end
 
-	def email
-	end
+  def email
+    property_info[:client][:client_info][:email]
+  end
 
-	def phone
-		property_info[:client][:client_info][:phone]
-	end
+  def phone
+    property_info[:client][:client_info][:phone]
+  end
 
   # Displayeds together in the view
   # Lat: xxx, Long: xxx
   # http://google.com/maps/lat&long
-	def longitude
-	end
+  def longitude
+    property_info[:listing][:coordinates][:longitude]
+  end
 
-	def latitude
-	end
+  def latitude
+    property_info[:listing][:coordinates][:latitude]
+  end
 
-	def opted_in
-	end
+  def opted_in?
+    opted_status[property_info[:client][:opted_in][:result]]
+  end
 
-	def zillow_zestimate_low
-	end
+  def zillow_zestimate_low
+    property_info[:pricing_estimates][:zillow][:low]
+  end
 
-	def zillow_zestimate_high
-	end
+  def zillow_zestimate_high
+    property_info[:pricing_estimates][:zillow][:high]
+  end
 
-	def zillow_zestimate
-	end
+  def zillow_zestimate
+    property_info[:pricing_estimates][:zillow][:zestimate]
+  end
 
-	def home_junction_low
-	end
+  def home_junction_low
+    property_info[:pricing_estimates][:home_junction][:low]
+  end
 
-	def home_junction_high
-	end
+  def home_junction_high
+    property_info[:pricing_estimates][:home_junction][:high]
+  end
 
-	def home_junction_regional_average
-	end
+  def home_junction_regional_average
+    property_info[:pricing_estimates][:home_junction][:regional_avg]
+  end
 
-	def enthusiasm
-	end
+  def enthusiasm
+    property_info[:client][:enthusiasm]
+  end
 
-	def timing
-	end
+  def timing
+    property_info[:client][:timing]
+  end
 
-	def adopter_type
-	end
+  def adopter_type
+    property_info[:client][:adopter_type]
+  end
 
-	def updates
-		[interior_update, exterior_update].join('<br />')
-	end
+  def updates
+    [interior_update, exterior_update]
+  end
 
-	def stage
-	end
+  def stage
+    property_info[:client][:stage]
+  end
 
-	def retainer
-	end
+  def retainer
+    '$500'
+  end
 
-	private
+  def found_us
+    property_info[:client][:found_us]
+  end
 
-	def interior_update
-	end
+  private
 
-	def exterior_update
-	end
+  def interior_update
+    property_info[:listing][:home_updates][:exterior]
+  end
 
-	def opted_status
-		{
-			true => 'Yes',
-			false => 'No'
-		}
-	end
+  def exterior_update
+    property_info[:listing][:home_updates][:interior]
+  end
 
-	def street_address1
-		property_info[:listing][:address][:address1]
-	end
+  def opted_status
+    {
+      true => 'Yes',
+      false => 'No'
+    }
+  end
 
-	def street_address2
-		property_info[:listing][:address][:address2]
-	end
+  def street_address1
+    property_info[:listing][:address][:address1]
+  end
 
-	def city
-		property_info[:listing][:address][:city]
-	end
+  def street_address2
+    property_info[:listing][:address][:address2]
+  end
 
-	def state
-		property_info[:listing][:address][:state]
-	end
+  def city
+    property_info[:listing][:address][:city]
+  end
 
-	def zip
-		property_info[:listing][:address][:zip]
-	end
+  def state
+    property_info[:listing][:address][:state]
+  end
 
-	def property_info
-		@property_info ||= trelora_service.property_result(@listing_id, @auth_token)[:result]
-	end
+  def zip
+    property_info[:listing][:address][:zip]
+  end
 
-	def trelora_service
-		TreloraService.new
-	end
+  def property_info
+    @property_info ||= trelora_service.property_result(@listing_id, @auth_token)[:result]
+  end
+
+  def trelora_service
+    TreloraService.new
+  end
 end

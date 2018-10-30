@@ -6,10 +6,10 @@ require 'rspec/rails'
 require 'webmock/rspec'
 require 'vcr'
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start
 
 VCR.configure do |config|
-  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.allow_http_connections_when_no_cassette = true
   # config.filter_sensitive_data('<YOUR XXX API KEY HERE>') { ENV['xxx_api_key'] }
