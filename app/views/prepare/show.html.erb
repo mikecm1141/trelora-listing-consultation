@@ -43,6 +43,15 @@
 				</td>
 			</tr>
 
+			<tr>
+				<th scope="row">
+					Map:
+				</th>
+				<td>
+					<%= link_to "#{@property_facade.latitude},#{@property_facade.longitude}", "http://www.google.com/maps/place/#{@property_facade.latitude},#{@property_facade.longitude}" %>
+				</td>
+			</tr>
+
 		</tbody>
 	</table>
 </div>
