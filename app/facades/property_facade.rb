@@ -80,7 +80,7 @@ class PropertyFacade
   end
 
   def retainer
-    "$500"
+    '$500'
   end
 
   def found_us
