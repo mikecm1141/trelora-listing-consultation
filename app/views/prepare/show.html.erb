@@ -18,6 +18,15 @@
 
 			<tr>
 				<th scope="row">
+					Email:
+				</th>
+				<td>
+					<%= mail_to @property_facade.email %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
 					Phone:
 				</th>
 				<td>
@@ -31,6 +40,110 @@
 				</th>
 				<td>
 					$500
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Map:
+				</th>
+				<td>
+					<%= link_to "Lat: #{@property_facade.latitude}, Long: #{@property_facade.longitude}", "http://www.google.com/maps/place/#{@property_facade.latitude},#{@property_facade.longitude}" %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Opted In:
+				</th>
+				<td>
+					<%= @property_facade.opted_in? %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Found Us:
+				</th>
+				<td>
+					<%= @property_facade.found_us %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Zillow:
+				</th>
+				<td>
+					<dl class="row">
+						<dt class="col-sm-3"> Zestimate: </dt>
+						<dd class="col-sm-9"> <%= number_to_currency(@property_facade.zillow_zestimate) %> </dd>
+						<dt class="col-sm-3"> High: </dt>
+						<dd class="col-sm-9"> <%= number_to_currency(@property_facade.zillow_zestimate_high) %> </dd>
+						<dt class="col-sm-3"> Low: </dt>
+						<dd class="col-sm-9"> <%= number_to_currency(@property_facade.zillow_zestimate_low) %> </dd>
+					</dl>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Home Junction:
+				</th>
+				<td>
+					<dl class="row">
+						<dt class="col-sm-3"> Regional Average: </dt>
+						<dd class="col-sm-9"> <%= number_to_currency(@property_facade.home_junction_regional_average) %> </dd>
+						<dt class="col-sm-3"> High: </dt>
+						<dd class="col-sm-9"> <%= number_to_currency(@property_facade.home_junction_high) %> </dd>
+						<dt class="col-sm-3"> Low: </dt>
+						<dd class="col-sm-9"> <%= number_to_currency(@property_facade.home_junction_low) %> </dd>
+					</dl>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Enthusiasm:
+				</th>
+				<td>
+					<%= @property_facade.enthusiasm %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Timing:
+				</th>
+				<td>
+					<%= @property_facade.timing %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Adopter Type:
+				</th>
+				<td>
+					<%= @property_facade.adopter_type %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Updates:
+				</th>
+				<td>
+					<%= @property_facade.updates.join("</br>").html_safe %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Stage:
+				</th>
+				<td>
+					<%= @property_facade.stage %>
 				</td>
 			</tr>
 		</tbody>
