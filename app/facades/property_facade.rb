@@ -13,6 +13,7 @@ class PropertyFacade
 	end
 
 	def email
+		property_info[:client][:client_info][:email]
 	end
 
 	def phone
@@ -71,7 +72,7 @@ class PropertyFacade
 	end
 
 	def updates
-		[interior_update, exterior_update].join('<br />')
+		[interior_update, exterior_update]
 	end
 
 	def stage
@@ -80,6 +81,10 @@ class PropertyFacade
 
 	def retainer
 		"$500"
+	end
+
+	def found_us
+		property_info[:client][:found_us]
 	end
 
 	private
