@@ -75,9 +75,11 @@ class PropertyFacade
 	end
 
 	def stage
+		property_info[:client][:stage]
 	end
 
 	def retainer
+		"$500"
 	end
 
 	private
