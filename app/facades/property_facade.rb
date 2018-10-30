@@ -30,25 +30,31 @@ class PropertyFacade
 		property_info[:listing][:coordinates][:latitude]
 	end
 
-	def opted_in
+	def opted_in?
+		property_info[:client][:opted_in][:result]
 	end
 
 	def zillow_zestimate_low
+		property_info[:pricing_estimates][:zillow][:low]
 	end
 
 	def zillow_zestimate_high
+		property_info[:pricing_estimates][:zillow][:high]
 	end
 
-	def zillow_zestimate
+	def zillow_zestimate		
+		property_info[:pricing_estimates][:zillow][:zestimate]
 	end
 
 	def home_junction_low
+		property_info[:pricing_estimates][:home_junction][:low]
 	end
 
 	def home_junction_high
 	end
 
 	def home_junction_regional_average
+		property_info[:pricing_estimates][:home_junction][:regional_avg]
 	end
 
 	def enthusiasm
