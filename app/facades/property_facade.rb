@@ -23,9 +23,11 @@ class PropertyFacade
   # Lat: xxx, Long: xxx
   # http://google.com/maps/lat&long
 	def longitude
+		property_info[:listing][:coordinates][:longitude]
 	end
 
 	def latitude
+		property_info[:listing][:coordinates][:latitude]
 	end
 
 	def opted_in
