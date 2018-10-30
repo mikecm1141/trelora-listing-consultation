@@ -51,6 +51,7 @@ class PropertyFacade
 	end
 
 	def home_junction_high
+		property_info[:pricing_estimates][:home_junction][:high]
 	end
 
 	def home_junction_regional_average
@@ -58,12 +59,15 @@ class PropertyFacade
 	end
 
 	def enthusiasm
+		property_info[:client][:enthusiasm]
 	end
 
 	def timing
+		property_info[:client][:timing]
 	end
 
 	def adopter_type
+		property_info[:client][:adopter_type]
 	end
 
 	def updates
