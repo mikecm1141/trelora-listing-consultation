@@ -48,7 +48,16 @@
 					Map:
 				</th>
 				<td>
-					<%= link_to "#{@property_facade.latitude},#{@property_facade.longitude}", "http://www.google.com/maps/place/#{@property_facade.latitude},#{@property_facade.longitude}" %>
+					<%= link_to "Lat: #{@property_facade.latitude}, Long: #{@property_facade.longitude}", "http://www.google.com/maps/place/#{@property_facade.latitude},#{@property_facade.longitude}" %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Opted In:
+				</th>
+				<td>
+					<%= @property_facade.opted_in? %>
 				</td>
 			</tr>
 
