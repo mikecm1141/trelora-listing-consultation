@@ -6,7 +6,7 @@ require './app/services/trelora_service'
 
 describe PropertyFacade do
   
-  subject { PropertyFacade.new('1860_south_marion_street-Denver-CO-80210', 'this_is_a_very_simple_auth_token_string') }
+ subject { PropertyFacade.new('1860_south_marion_street-Denver-CO-80210', 'this_is_a_very_simple_auth_token_string') }
   
   it 'exists with standard attributes' do
     expect(subject).to be_a(PropertyFacade)
