@@ -30,6 +30,5 @@ describe PropertyFacade do
 		expect(subject.stage).to eq("Just getting interested in prepping home for sale. Wants to sell and use $$ to buy with us as well.")
 		expect(subject.retainer).to eq("$500")
 		expect(subject.found_us).to eq("Google Search")
-		
 	end
 end
