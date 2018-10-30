@@ -31,7 +31,7 @@ class PropertyFacade
 	end
 
 	def opted_in?
-		property_info[:client][:opted_in][:result]
+		opted_status[property_info[:client][:opted_in][:result]]
 	end
 
 	def zillow_zestimate_low
@@ -42,7 +42,7 @@ class PropertyFacade
 		property_info[:pricing_estimates][:zillow][:high]
 	end
 
-	def zillow_zestimate		
+	def zillow_zestimate
 		property_info[:pricing_estimates][:zillow][:zestimate]
 	end
 
