@@ -120,6 +120,32 @@
 				</td>
 			</tr>
 
+			<tr>
+				<th scope="row">
+					Adopter Type:
+				</th>
+				<td>
+					<%= @property_facade.adopter_type %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Updates:
+				</th>
+				<td>
+					<%= @property_facade.updates.join("</br>").html_safe %>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">
+					Stage:
+				</th>
+				<td>
+					<%= @property_facade.stage %>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 </div>
