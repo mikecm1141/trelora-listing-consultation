@@ -85,9 +85,11 @@ class PropertyFacade
 	private
 
 	def interior_update
+		property_info[:listing][:home_updates][:exterior]
 	end
 
 	def exterior_update
+		property_info[:listing][:home_updates][:interior]
 	end
 
 	def opted_status
