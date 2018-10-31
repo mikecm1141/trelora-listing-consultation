@@ -2,8 +2,10 @@ require 'rails_helper'
 
 describe 'As a logged in agent' do
   it 'can generate a form to fill in listing details' do
-    current_property = double("property_found", :full_address => "1860 S Marion Street Denver CO 80210")
-    allow_any_instance_of(ApplicationController).to receive(:current_property).and_return(current_property)
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    user.user_properties.create(listing_id: '1860_south_marion_street-Denver-CO-80210')
+  
     visit '/collect'
 
     fill_in :about_home, with: 'Updated Kitchen, Eastfacing Patio'
