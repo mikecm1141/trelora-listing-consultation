@@ -11,7 +11,7 @@
 
       (this).value = (this).value.replace(/[^0-9\-]/g,'');
     });
-    
+
  // Allow only integers in recommended list price
     $('#recommended_list_price').keyup(function() {
       (this).value = (this).value.replace(/[^0-9]/g, '');
@@ -20,3 +20,11 @@
     // Collect Form Validations
     $('#submit').on('click', function(event) {
       var passing = true;
+
+      var about_the_home = $('#about_home').val();
+      var recommended_list_price = parseInt($('#recommended_list_price').val());
+      var buyer_agent_commission = $('#buyer_agent_commission').val();
+      var about_the_seller = $('#about_the_seller').val();
+      var credit_card_number = $('#credit_card_number').val();
+      var cc_month = $('#cc_month').val();
+      var cc_year = $('#cc_year').val();
