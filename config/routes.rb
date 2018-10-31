@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/prepare', to: 'prepare#show'
 
   get '/collect', to: 'collect#new'
+  post '/collect', to: 'collect#create'
 end

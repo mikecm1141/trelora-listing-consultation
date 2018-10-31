@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_property
+    binding.pry
     @current_property ||= session[:property]
   end
 end

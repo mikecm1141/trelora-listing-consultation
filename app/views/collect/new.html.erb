@@ -76,9 +76,10 @@
 
   <div class="border-bottom pt-4 pb-3">
     <p class="text-center h5 font-weight-bold">
-      8165 Inglefield Ct. Aurora CO 80013
+      <%= @property_facade.full_address %>
     </p>
   </div>
+  
   <div class="container mt-2">
     <%= form_tag("/collect", method: :post, id: 'collect') do %>
       <div class="form-group">
