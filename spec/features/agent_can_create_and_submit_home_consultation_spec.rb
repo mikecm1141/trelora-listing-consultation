@@ -9,7 +9,7 @@ describe 'As a logged in agent' do
     select 'Hot', from: :updated_client_enthusiasm
     fill_in :buyer_agent_commission, with: '123'
     fill_in :about_the_seller, with: 'Buying new build condo'
-    fill_in :credit_card_number, with: "1111222233334444"
+    fill_in :credit_card_number, with: '1111222233334444'
     select '01', from: :cc_month
     select '2018', from: :cc_year
 
