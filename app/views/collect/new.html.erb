@@ -1,0 +1,13 @@
+<script>
+  $(document).ready(function() {
+
+    // Adds dashes to credit card input and allows only numbers
+    $('#credit_card_number').keyup(function() {
+      var number = $(this).val().split('-').join('');
+      if (number.length > 0) {
+        number = number.match(new RegExp('.{1,4}', 'g')).join('-');
+      }
+      $(this).val(number);
+
+      (this).value = (this).value.replace(/[^0-9\-]/g,'');
+    });
