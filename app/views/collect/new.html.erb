@@ -28,3 +28,47 @@
       var credit_card_number = $('#credit_card_number').val();
       var cc_month = $('#cc_month').val();
       var cc_year = $('#cc_year').val();
+
+      $('.text-danger').remove();
+      
+      if (about_the_home.length < 1) {
+        passing = false;
+        $('#about_home').after('<p class="text-danger">This field is required.</p>');
+      }
+
+      if ((recommended_list_price < 1) || (recommended_list_price > 100000000)) {
+        passing = false;
+        $('#recommended_list_price').after('<p class="text-danger">List price must be between 1 and 100000000.</p>');
+      }
+
+      if (buyer_agent_commission.length < 1) {
+        passing = false;
+        $('#buyer_agent_commission').after('<p class="text-danger">This field is required.</p>');
+      }
+
+      if (about_the_seller.length < 1) {
+        passing = false;
+        $('#about_the_seller').after('<p class="text-danger">This field is required.</p>');
+      }
+
+      if (credit_card_number.length < 1) {
+        passing = false;
+        $('#credit_card_number').after('<p class="text-danger">This field is required and must be a valid credit card number.</p>');
+      }
+
+      if (cc_month === 'MM') {
+        passing = false;
+        $('#cc_month').after('<p class="text-danger">Please select a valid month.</p>');
+      }
+
+      if (cc_year === 'YYYY') {
+        passing = false;
+        $('#cc_year').after('<p class="text-danger">Please select a valid year.</p>');
+      }
+
+      if (passing === false) {
+        event.preventDefault();
+      }
+    });
+  
+  });
