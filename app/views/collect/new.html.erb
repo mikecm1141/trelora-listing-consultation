@@ -85,3 +85,11 @@
         <%= label_tag :about_home, 'About The Home', class: 'h6' %>
         <%= text_area_tag :about_home, nil, rows: 3, class: 'form-control' %>
       </div>
+      <div class="form-group">
+          <%= label_tag :recommended_list_price, 'Recommended List Price', class: 'h6' %>
+          <%= text_field_tag :recommended_list_price, nil, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :update_client_enthusiasm, 'Update Client Enthusiasm', class: 'h6' %>
+        <%= select_tag :update_client_enthusiasm, options_for_select(%w[Hot Medium Mild]), class: 'form-control' %>
+      </div>
