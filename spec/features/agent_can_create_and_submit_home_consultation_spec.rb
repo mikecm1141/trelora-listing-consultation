@@ -5,8 +5,16 @@ describe 'As a logged in agent' do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     user.user_properties.create(listing_id: '1860_south_marion_street-Denver-CO-80210')
-  
-    visit '/collect'
+
+    visit '/find-property'
+
+    search_address = '1860 South Marion Street Denver CO 80210'
+
+    fill_in :address, with: search_address
+    click_on 'Find Location'
+    click_link 'Collect'
+
+    expect(current_path).to eq('/collect')
 
     fill_in :about_home, with: 'Updated Kitchen, Eastfacing Patio'
     fill_in :recommended_list_price, with: 123_000
