@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'As a logged in agent' do 
+describe 'As a logged in agent' do
   it 'can generate a form to fill in listing details' do
-    visit '/collect' 
+    visit '/collect'
 
     fill_in :about_home, with: 'Updated Kitchen, Eastfacing Patio'
     fill_in :recommended_list_price, with: 123000
