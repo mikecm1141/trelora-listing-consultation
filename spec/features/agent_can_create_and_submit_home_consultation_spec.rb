@@ -5,7 +5,7 @@ describe 'As a logged in agent' do
     visit '/collect'
 
     fill_in :about_home, with: 'Updated Kitchen, Eastfacing Patio'
-    fill_in :recommended_list_price, with: 123000
+    fill_in :recommended_list_price, with: 123_000
     select "Hot", from: :updated_client_enthusiasm
     fill_in :buyer_agent_commission, with: "123"
     fill_in :about_the_seller, with: 'Buying new build condo'
