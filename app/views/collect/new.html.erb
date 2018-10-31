@@ -16,7 +16,7 @@
     $('#recommended_list_price').keyup(function() {
       (this).value = (this).value.replace(/[^0-9]/g, '');
     });
-    
+
     // Collect Form Validations
     $('#submit').on('click', function(event) {
       var passing = true;
@@ -30,7 +30,7 @@
       var cc_year = $('#cc_year').val();
 
       $('.text-danger').remove();
-      
+
       if (about_the_home.length < 1) {
         passing = false;
         $('#about_home').after('<p class="text-danger">This field is required.</p>');
@@ -70,6 +70,18 @@
         event.preventDefault();
       }
     });
-  
+
   });
   </script>
+
+  <div class="border-bottom pt-4 pb-3">
+    <p class="text-center h5 font-weight-bold">
+      8165 Inglefield Ct. Aurora CO 80013
+    </p>
+  </div>
+  <div class="container mt-2">
+    <%= form_tag("/collect", method: :post, id: 'collect') do %>
+      <div class="form-group">
+        <%= label_tag :about_home, 'About The Home', class: 'h6' %>
+        <%= text_area_tag :about_home, nil, rows: 3, class: 'form-control' %>
+      </div>
