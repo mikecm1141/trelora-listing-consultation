@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post '/find-property', to: 'find#create'
 
   get '/prepare', to: 'prepare#show'
+
+  get '/collect', to: 'collect#new'
 end
