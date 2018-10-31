@@ -11,3 +11,12 @@
 
       (this).value = (this).value.replace(/[^0-9\-]/g,'');
     });
+    
+ // Allow only integers in recommended list price
+    $('#recommended_list_price').keyup(function() {
+      (this).value = (this).value.replace(/[^0-9]/g, '');
+    });
+    
+    // Collect Form Validations
+    $('#submit').on('click', function(event) {
+      var passing = true;
