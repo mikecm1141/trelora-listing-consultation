@@ -13,7 +13,7 @@ describe 'As a logged in agent' do
     select '01', from: :cc_month
     select '2018', from: :cc_year
 
-    click_on "Finish"
+    click_on 'Finish'
 
     expect(current_path).to eq('/collect')
 
