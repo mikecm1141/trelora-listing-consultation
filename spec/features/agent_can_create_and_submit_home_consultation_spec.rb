@@ -15,6 +15,15 @@ describe 'As a logged in agent' do
 
     click_on "Finish"
 
-    expect(page)
+    expect(current_path).to eq('/collect')
+
+    expect(page).to has_field?(:about_home, disabled: true)
+    expect(page).to has_field?(:recommended_list_price, disabled: true)
+    expect(page).to has_field?(:updated_client_enthusiasm, disabled: true)
+    expect(page).to has_field?(:buyer_agent_commission, disabled: true)
+    expect(page).to has_field?(:about_the_seller, disabled: true)
+    expect(page).to has_field?(:credit_card_number, disabled: true)
+    expect(page).to has_field?(:cc_month, disabled: true)
+    expect(page).to has_field?(:cc_year, disabled: true)
   end
 end
