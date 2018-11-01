@@ -15,10 +15,10 @@ class CollectController < ApplicationController
     params.permit(:about_home,
                   :recommended_list_price,
                   :update_client_enthusiasm,
-                  :buyer_agent_commission, 
+                  :buyer_agent_commission,
                   :about_the_seller,
-                  :credit_card_number, 
-                  :cc_month, 
+                  :credit_card_number,
+                  :cc_month,
                   :cc_year)
   end
 
