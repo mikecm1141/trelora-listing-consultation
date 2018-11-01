@@ -6,7 +6,7 @@ class CollectController < ApplicationController
   def create
     service = TreloraService.new
     service.send_consultation_info(current_user.http_auth_token, collect_payload)
-    redirect_to "/collect"
+    redirect_to '/collect'
   end
 
   private
