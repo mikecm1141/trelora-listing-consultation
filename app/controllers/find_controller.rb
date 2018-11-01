@@ -5,6 +5,7 @@ class FindController < ApplicationController
 
   def create
   	session[:property_found] = find_property.listing_id
+    session.delete(:complete)
   	redirect_to '/prepare'
   end
 

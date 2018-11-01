@@ -1,6 +1,18 @@
 <script>
   $(document).ready(function() {
 
+    // Modal View On Page Load
+    <% if session[:complete].nil? %>
+      $('#startCollect').modal('show');
+    <% end %>
+
+    // Consultation Timer
+    $("#start_timer").click(function(){
+      var date = new Date();
+      var startTime = date.getTime();
+      $("#start_time").val(startTime);
+    });
+
     // Adds dashes to credit card input and allows only numbers
     $('#credit_card_number').keyup(function() {
       var number = $(this).val().split('-').join('');
@@ -69,10 +81,30 @@
       if (passing === false) {
         event.preventDefault();
       }
+
+      var startTime = $("#start_time").val();
+      var date = new Date();
+      var endTime = date.getTime();
+      
+      var totalTime = endTime - startTime;
+
+      $("#consultation_length").val(totalTime)
     });
 
   });
   </script>
+
+    <!-- MODAL BEGIN -->
+    <div class="modal fade" id="startCollect" tabindex="-1" role="dialog" aria-labelledby="startCollectTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-footer center-wrapper">
+            <button type="button" class="btn-trelora" id="start_timer" data-dismiss="modal">Start Consultation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL STOP -->
 
   <div class="border-bottom pt-4 pb-3">
     <p class="text-center h5 font-weight-bold">
@@ -81,6 +113,12 @@
   </div>
   
   <div class="container mt-2">
+    <div class="center-wrapper">
+      <% if flash[:alert] %>
+        <p class="text-danger"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+    
     <%= form_tag("/collect", method: :post, id: 'collect') do %>
       <div class="form-group">
         <%= label_tag :about_home, 'About The Home', class: 'h6' %>
@@ -131,6 +169,10 @@
                          disabled: session[:complete] 
           %>
         </div>
+
+        <%= hidden_field_tag :start_time %>
+
+        <%= hidden_field_tag :consultation_length %>
       </div>
     </div>
 
