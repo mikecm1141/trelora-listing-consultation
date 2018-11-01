@@ -7,10 +7,16 @@ class CollectController < ApplicationController
     service = TreloraService.new
     service.send_consultation_info(current_user.http_auth_token, collect_payload)
     session[:complete] = true
+    flash[:alert] = "Home Listing Consultation Complete. Total Time: #{time_to_string}"
     redirect_to '/collect'
   end
 
   private
+
+  def time_to_string
+    seconds = (params[:consultation_length].to_f / 1000.0)
+    Time.at(seconds).utc.strftime("%H:%M:%S")
+  end
 
   def collect_params
     params.permit(:about_home,
