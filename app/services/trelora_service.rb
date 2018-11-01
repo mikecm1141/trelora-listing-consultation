@@ -7,10 +7,23 @@ class TreloraService
     get_json("/api/v0/turing/properties?HTTP_AUTH_TOKEN=#{auth_token}&address=#{listing_id}")
   end
 
+  def send_consultation_info(auth_token, payload)
+    post_json("/api/v0/turing/update_listing_consultation?HTTP_AUTH_TOKEN=#{auth_token}", payload)
+  end
+
   private
 
   def get_json(url)
     JSON.parse(conn.get(url).body, symbolize_names: true)
+  end
+
+  def post_json(url, payload)
+    # conn.post(url, payload)
+    conn.post do |request|
+      request.url url
+      request.headers['Accept'] = 'application/json'
+      request.body = payload
+    end
   end
 
   def conn

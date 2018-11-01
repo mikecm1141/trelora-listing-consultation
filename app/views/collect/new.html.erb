@@ -1,6 +1,18 @@
 <script>
   $(document).ready(function() {
 
+    // Modal View On Page Load
+    <% if session[:complete].nil? %>
+      $('#startCollect').modal('show');
+    <% end %>
+
+    // Consultation Timer
+    $("#start_timer").click(function(){
+      var date = new Date();
+      var startTime = date.getTime();
+      $("#start_time").val(startTime);
+    });
+
     // Adds dashes to credit card input and allows only numbers
     $('#credit_card_number').keyup(function() {
       var number = $(this).val().split('-').join('');
@@ -16,7 +28,7 @@
     $('#recommended_list_price').keyup(function() {
       (this).value = (this).value.replace(/[^0-9]/g, '');
     });
-    
+
     // Collect Form Validations
     $('#submit').on('click', function(event) {
       var passing = true;
@@ -30,7 +42,7 @@
       var cc_year = $('#cc_year').val();
 
       $('.text-danger').remove();
-      
+
       if (about_the_home.length < 1) {
         passing = false;
         $('#about_home').after('<p class="text-danger">This field is required.</p>');
@@ -69,7 +81,103 @@
       if (passing === false) {
         event.preventDefault();
       }
+
+      var startTime = $("#start_time").val();
+      var date = new Date();
+      var endTime = date.getTime();
+      
+      var totalTime = endTime - startTime;
+
+      $("#consultation_length").val(totalTime)
     });
-  
+
   });
   </script>
+
+    <!-- MODAL BEGIN -->
+    <div class="modal fade" data-backdrop="static" id="startCollect" tabindex="-1" role="dialog" aria-labelledby="startCollectTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-footer center-wrapper">
+            <button type="button" class="btn-trelora" id="start_timer" data-dismiss="modal">Start Consultation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL STOP -->
+
+  <div class="border-bottom pt-4 pb-3">
+    <p class="text-center h5 font-weight-bold">
+      <%= @property_facade.full_address %>
+    </p>
+  </div>
+  
+  <div class="container mt-2">
+    <div class="center-wrapper">
+      <% if flash[:alert] %>
+        <p class="text-danger"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+    
+    <%= form_tag("/collect", method: :post, id: 'collect') do %>
+      <div class="form-group">
+        <%= label_tag :about_home, 'About The Home', class: 'h6' %>
+        <%= text_area_tag :about_home, nil, rows: 3, class: 'form-control', disabled: session[:complete] %>
+      </div>
+      <div class="form-group">
+          <%= label_tag :recommended_list_price, 'Recommended List Price', class: 'h6' %>
+          <%= text_field_tag :recommended_list_price, nil, class: 'form-control', disabled: session[:complete] %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :update_client_enthusiasm, 'Update Client Enthusiasm', class: 'h6' %>
+        <%= select_tag :update_client_enthusiasm, options_for_select(%w[Hot Medium Mild]), class: 'form-control', disabled: session[:complete]  %>
+      </div>
+      <div class="form-group">
+      <%= label_tag :buyer_agent_commission, 'Buyer Agent Commission', class: 'h6' %>
+      <%= text_field_tag :buyer_agent_commission, nil, class: 'form-control', disabled: session[:complete]  %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :about_the_seller, 'About The Seller', class: 'h6' %>
+        <%= text_area_tag :about_the_seller, nil, rows: 3, class: 'form-control', disabled: session[:complete]  %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :credit_card_number, 'Credit Card Number', class: 'h6' %>
+        <%= text_field_tag :credit_card_number, nil, class: 'form-control', maxlength: 19, disabled: session[:complete]  %>
+      </div>
+      <div class="form-group">
+      <div class="form-row">
+        <%= label_tag :credit_card_expiry, 'Credit Card Expiration Date', class: 'h6', disabled: session[:complete]  %>
+      </div>
+      <div class="form-row">
+        <div class="col-4">
+          <%= select_tag :cc_month,
+                         options_for_select(
+                           %w[MM 01 02 03 04 05 06 07 08 09 10 11 12]
+                         ),
+                         class: 'form-control', 
+                         disabled: session[:complete] 
+          %>
+        </div>
+        <div class="col-5">
+          <%= select_tag :cc_year,
+                         options_for_select(
+                           %w[YYYY 2018 2019 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030 2031 2032 2033 2034 2035], 'YYYY'
+                         ),
+                         class: 'form-control',
+                         disabled: session[:complete] 
+          %>
+        </div>
+
+        <%= hidden_field_tag :start_time %>
+
+        <%= hidden_field_tag :consultation_length %>
+      </div>
+    </div>
+
+    <div class="center-wrapper mb-4 mt-4">
+      <%= submit_tag 'Finish', class: 'btn-trelora', id: 'submit', disabled: session[:complete]  %>
+    </div>
+  <% end %>
+</div>
