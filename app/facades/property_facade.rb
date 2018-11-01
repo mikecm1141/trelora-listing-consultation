@@ -12,6 +12,10 @@ class PropertyFacade
     [street_address1, street_address2, city, state, zip].join(' ')
   end
 
+  def zillow_address
+    @listing_id.gsub("_", "-").downcase
+  end
+
   def email
     property_info[:client][:client_info][:email]
   end
