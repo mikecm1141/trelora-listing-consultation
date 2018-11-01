@@ -33,7 +33,7 @@ class CollectController < ApplicationController
       commission: collect_params[:buyer_agent_commission],
       about_the_seller: collect_params[:about_the_seller],
       credit_card: collect_params[:credit_card_number],
-      exp_date: collect_params[:cc_month] + "/" + collect_params[:cc_year]
+      exp_date: collect_params[:cc_month] + '/' + collect_params[:cc_year]
     }
   end
 end
