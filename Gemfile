@@ -21,6 +21,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
