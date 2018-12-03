@@ -27,6 +27,6 @@ class TreloraService
   end
 
   def conn
-    Faraday.new(url: "https://www.trylora.com")
+    Faraday.new(url: "https://trylora.herokuapp.com/")
   end
 end
