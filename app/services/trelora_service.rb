@@ -14,7 +14,7 @@ class TreloraService
   private
 
   def get_json(url)
-    JSON.parse(conn.get(url).body, symbolize_names: true)
+    JSON.parse(conn.post(url).body, symbolize_names: true)
   end
 
   def post_json(url, payload)
@@ -27,6 +27,6 @@ class TreloraService
   end
 
   def conn
-    Faraday.new(url: "https://www.trylora.com")
+    Faraday.new(url: "https://trylora.herokuapp.com")
   end
 end
